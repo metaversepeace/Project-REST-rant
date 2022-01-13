@@ -1,6 +1,8 @@
 //This controller page contains the rest of our site's routes
-const router = require('express').Router();
+const router = require('express').Router()
 
-// More code here in a moment
+router.get('/', (req, res) => {
+    res.send('These are places')
+})
 
-module.exports = router;
+module.exports = router
