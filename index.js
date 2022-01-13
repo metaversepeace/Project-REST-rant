@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 //Require epress to start using it.
 const express = require('express');
 
@@ -11,7 +13,10 @@ app.get('/',(req,res) => {
 });
 
 //Opening the server to listen for connections
-server.listen(3000);
+app.listen(process.env.PORT, function(){
+    console.log('This port works')
+    });
+
 /*    
 let http = require('http')
 let server = http.createServer(function(req, res) {
