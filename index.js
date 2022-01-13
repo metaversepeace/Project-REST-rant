@@ -12,10 +12,17 @@ app.get('/',(req,res) => {
     res.send('HOMEPAGE')
 });
 
+app.use('/places', require('./controllers/places'));
+
+//Opening a wildcard route
+app.get('*', (req, res) => {
+    res.status(404).send('<h1>404 Page</h1>')
+});
+
 //Opening the server to listen for connections
 app.listen(process.env.PORT, function(){
     console.log('This port works')
-    });
+});
 
 /*    
 let http = require('http')
