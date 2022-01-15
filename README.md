@@ -55,6 +55,6 @@ state | String
 ______|______________
 cuisines | String
 _________|______________      
-pic   | String
+pic   | String (a URL)
 ______|______________
   

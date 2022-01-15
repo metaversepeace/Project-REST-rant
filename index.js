@@ -10,6 +10,7 @@ const app = express();
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
+//Making the controllers
 app.use('/places', require('./controllers/places'));
 
 //Making the homepage route
@@ -18,8 +19,7 @@ app.get('/',(req,res) => {
     res.render('HOME')
 });
 
-
-//Opening a wildcard route
+//Making a wildcard route
 app.get('*', (req, res) => {
     res.render('error404')
 });
