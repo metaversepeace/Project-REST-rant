@@ -21,7 +21,7 @@ app.get('/',(req,res) => {
 
 //Opening a wildcard route
 app.get('*', (req, res) => {
-    res.render(404).send('404 Page')
+    res.render('error404')
 });
 
 //Opening the server to listen for connections
