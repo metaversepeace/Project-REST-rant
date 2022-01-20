@@ -1,7 +1,12 @@
 //This controller page contains the rest of our site's routes
 const router = require('express').Router();
 
-// GET /places
+//Get/places/new
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
+//GET/places
 router.get('/', (req, res) => {
     let places = [{
         name: 'H-Thai-ML',
