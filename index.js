@@ -6,9 +6,11 @@ const express = require('express');
 //Initializing the express app.
 const app = express();
 
-//Defining the view engine we'll be using
+//Express Settings; Middleware; Defining the view engine we'll be using
+app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
 
 //Making the controllers
 app.use('/places', require('./controllers/places'));
