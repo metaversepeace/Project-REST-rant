@@ -2,18 +2,18 @@
 const router = require('express').Router();
 const places = require('../models/places.js')
 
-//Get/places
-router.get('/', (req, res) => {
-  let places = []
+//Index Route
+router.get('/places', (req, res) => {
   res.render('places/index', {places})
-})
+});
+
 
 //More code . . .
 
-//Get/places/new
+//New Places Route (Get)
 router.get('/new', (req, res) => {
   res.render('places/new')
-})
+});
 
 //Put route
 router.put('/:id', (req, res) => {
@@ -41,9 +41,9 @@ router.put('/:id', (req, res) => {
       places[id] = req.body
       res.redirect(`/places/${id}`)
   }
-})
+});
 
-//show route
+//Show Route
 router.get('/:id', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {
@@ -71,7 +71,7 @@ router.get('/:id/edit', (req, res) => {
   }
 })
 
-//Post/places route
+//Post Places route
 router.post('/', (req, res) => {
   if (!req.body.pic) {
     // Default image if one is not provided
